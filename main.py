@@ -8,7 +8,7 @@ import sys
 import json
 from pathlib import Path
 import urllib.request
-
+import time
 # Import custom modules
 from data_preprocessor import DASDataProcessor, DASPyTorchDataset
 from training_pipeline import DASTrainer
@@ -560,4 +560,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
