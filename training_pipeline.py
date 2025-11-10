@@ -107,7 +107,7 @@ class DASTrainer:
         epoch_acc = 100. * correct / total
 
         return epoch_loss, epoch_acc
-        return epoch_loss, epoch_acc
+
 
     def validate_epoch(self, val_loader):
         """Validate for one epoch"""
@@ -358,3 +358,4 @@ class DASTrainer:
             json.dump(report, f, indent=2)
 
         print(f"📄 Training report saved to {report_file}")
+
