@@ -516,15 +516,15 @@ def main():
         # Step 5: Train model with specified strategy
         trainer = train_model(model, train_loader, val_loader, device, model_name, args)
 
-
-        # Step 6: Perform comprehensive analysis (UPDATED)
+        # Step 6: Evaluate model on test set
+        test_accuracy = evaluate_model(trainer, test_loader, class_names, model_name, args.finetune_strategy)
+        
+        # Step 7: Perform comprehensive analysis (UPDATED)
         print("\n🔬 Step 6: Comprehensive Model Analysis")
         ablation_report = perform_comprehensive_analysis(
             trainer, test_loader, class_names, model_name, args.finetune_strategy
         )
 
-        # Step 7: Evaluate model on test set
-        test_accuracy = evaluate_model(trainer, test_loader, class_names, model_name, args.finetune_strategy)
 
         # Step 8: Run architecture comparison if multiple experiments exist
         has_comparison = run_architecture_comparison()
@@ -562,3 +562,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
